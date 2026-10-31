@@ -1,0 +1,18 @@
+{
+  "n_images": 1131,
+  "unique_regions": 1103,
+  "counts": {
+    "('test', 'faulty')": 99,
+    "('test', 'good_clean')": 8,
+    "('test', 'good_stripes')": 8,
+    "('train', 'faulty')": 886,
+    "('train', 'good_clean')": 10,
+    "('train', 'good_stripes')": 9,
+    "('val', 'faulty')": 98,
+    "('val', 'good_clean')": 6,
+    "('val', 'good_stripes')": 7
+  },
+  "train_test_region_overlap": 0,
+  "train_val_region_overlap": 0,
+  "val_test_region_overlap": 0
+}

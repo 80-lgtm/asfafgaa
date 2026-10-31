@@ -1,0 +1,293 @@
+{
+  "uncertainty": {
+    "unit": "unique recorded region (cluster bootstrap over region-level metrics)",
+    "aggregation": "max score per region; any-positive rule for FPR/recall at region level",
+    "n_bootstrap": 10000,
+    "seed": 20261031,
+    "point_metrics_state_level": {
+      "threshold": 3.0917434692382812,
+      "faulty_recall": 0.9090909090909091,
+      "stripe_fpr": 0.25,
+      "normal_fpr": 0.125
+    },
+    "point_metrics_region_level": {
+      "auroc": 0.8939393939393939,
+      "faulty_region_recall": 0.9090909090909091,
+      "normal_region_any_fpr": 0.3333333333333333,
+      "stripe_region_any_fpr": 0.3333333333333333,
+      "n_regions": 105,
+      "n_normal_regions": 6,
+      "n_stripe_regions": 6
+    },
+    "auroc_ci95": {
+      "ci95": [
+        0.7643097643097643,
+        0.9831649831649832
+      ],
+      "n_defined": 9981,
+      "n_skipped": 19
+    },
+    "normal_region_any_fpr_ci95": {
+      "ci95": [
+        0.0,
+        0.8
+      ],
+      "n_defined": 9981,
+      "n_skipped": 19
+    },
+    "stripe_region_any_fpr_ci95": {
+      "ci95": [
+        0.0,
+        0.8
+      ],
+      "n_defined": 9981,
+      "n_skipped": 19
+    },
+    "faulty_region_recall_ci95": {
+      "ci95": [
+        0.8484848484848485,
+        0.9603960396039604
+      ],
+      "n_defined": 10000,
+      "n_skipped": 0
+    }
+  },
+  "matched_control": {
+    "design": "10 state frames and 1,960 coreset features per bank; clean-only vs 5 clean plus 5 stripes",
+    "frame_sampling": "with replacement; both clean-only and mixed banks are resampled",
+    "seeds": [
+      11,
+      29,
+      47,
+      71,
+      97,
+      131,
+      173,
+      211,
+      257,
+      311
+    ],
+    "runs": [
+      {
+        "seed": 11,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9363937377929688,
+        "faulty_recall": 0.9494949494949495,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8478535353535354
+      },
+      {
+        "seed": 11,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.265660285949707,
+        "faulty_recall": 0.8888888888888888,
+        "stripe_fpr": 0.25,
+        "normal_fpr": 0.125,
+        "auroc": 0.9589646464646465
+      },
+      {
+        "seed": 29,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9363937377929688,
+        "faulty_recall": 0.9494949494949495,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8327020202020202
+      },
+      {
+        "seed": 29,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.063587188720703,
+        "faulty_recall": 0.9191919191919192,
+        "stripe_fpr": 0.25,
+        "normal_fpr": 0.125,
+        "auroc": 0.9589646464646465
+      },
+      {
+        "seed": 47,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.620485782623291,
+        "faulty_recall": 0.98989898989899,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.845959595959596
+      },
+      {
+        "seed": 47,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.290158748626709,
+        "faulty_recall": 0.8585858585858586,
+        "stripe_fpr": 0.25,
+        "normal_fpr": 0.125,
+        "auroc": 0.9627525252525253
+      },
+      {
+        "seed": 71,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9363937377929688,
+        "faulty_recall": 0.9494949494949495,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8484848484848485
+      },
+      {
+        "seed": 71,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9444308280944824,
+        "faulty_recall": 0.9494949494949495,
+        "stripe_fpr": 0.625,
+        "normal_fpr": 0.3125,
+        "auroc": 0.9412878787878788
+      },
+      {
+        "seed": 97,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.6190168857574463,
+        "faulty_recall": 0.98989898989899,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.5,
+        "auroc": 0.8402777777777778
+      },
+      {
+        "seed": 97,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.2047200202941895,
+        "faulty_recall": 0.9292929292929293,
+        "stripe_fpr": 0.375,
+        "normal_fpr": 0.1875,
+        "auroc": 0.9431818181818182
+      },
+      {
+        "seed": 131,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9363937377929688,
+        "faulty_recall": 0.9494949494949495,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8453282828282829
+      },
+      {
+        "seed": 131,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.415074110031128,
+        "faulty_recall": 0.8080808080808081,
+        "stripe_fpr": 0.25,
+        "normal_fpr": 0.125,
+        "auroc": 0.9147727272727273
+      },
+      {
+        "seed": 173,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.9441628456115723,
+        "faulty_recall": 0.9696969696969697,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8440656565656566
+      },
+      {
+        "seed": 173,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.1925525665283203,
+        "faulty_recall": 0.9292929292929293,
+        "stripe_fpr": 0.375,
+        "normal_fpr": 0.1875,
+        "auroc": 0.9507575757575758
+      },
+      {
+        "seed": 211,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.052713394165039,
+        "faulty_recall": 0.9292929292929293,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8547979797979798
+      },
+      {
+        "seed": 211,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.2346434593200684,
+        "faulty_recall": 0.8787878787878788,
+        "stripe_fpr": 0.375,
+        "normal_fpr": 0.1875,
+        "auroc": 0.928030303030303
+      },
+      {
+        "seed": 257,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.2146239280700684,
+        "faulty_recall": 0.9292929292929293,
+        "stripe_fpr": 0.875,
+        "normal_fpr": 0.4375,
+        "auroc": 0.8642676767676768
+      },
+      {
+        "seed": 257,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.423734664916992,
+        "faulty_recall": 0.8080808080808081,
+        "stripe_fpr": 0.125,
+        "normal_fpr": 0.0625,
+        "auroc": 0.9684343434343434
+      },
+      {
+        "seed": 311,
+        "bank": "clean_only",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 2.538483142852783,
+        "faulty_recall": 0.98989898989899,
+        "stripe_fpr": 1.0,
+        "normal_fpr": 0.5625,
+        "auroc": 0.8295454545454546
+      },
+      {
+        "seed": 311,
+        "bank": "clean_plus_stripes",
+        "n_state_frames": 10,
+        "effective_coreset": 1960,
+        "threshold": 3.112837791442871,
+        "faulty_recall": 0.898989898989899,
+        "stripe_fpr": 0.375,
+        "normal_fpr": 0.1875,
+        "auroc": 0.9444444444444444
+      }
+    ]
+  }
+}

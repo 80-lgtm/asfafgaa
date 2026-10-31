@@ -1,0 +1,103 @@
+project_id: sadd-region-evaluation
+product_name: SCI保姆
+assistant_name: 宝宝巴士
+entry_route: project_continue
+research_direction: shearographic image anomaly detection
+working_title: 剪切散斑图像异常检测中全局形变正常样本的作用
+primary_paper_family: M
+user_reported_stage: M7
+diagnosed_stage: M7
+stage_confidence: high
+action_route: HYBRID
+active_capabilities: [presubmission-review, data-availability, scientific-figures]
+target:
+  journal: NDT&E International
+  article_type: original research
+  language: English working draft
+  deadline: as soon as feasible
+  requirements_source: user-provided official PDF 001/1/Guide for authors - NDT & E International
+  requirements_verified_on: 2026-10-31
+data_sufficiency:
+  status: SUFFICIENT
+  assessed_on: '2026-10-31'
+  research_question_fit: sufficient for a bounded internal evaluation only
+  critical_unrepairable_gaps:
+    - no cross-dataset or physical-component external validity
+    - only six unique normal test regions
+    - no external baselines under the same protocol
+  acquisition_needed: false
+figure_workflow:
+  readiness: REVISION_READY
+  result_input_files:
+    - outputs/region/region_report.json
+    - data/processed_region/manifest.csv
+    - data/raw/SADD_v1.1.zip
+    - outputs/l2/cache
+  plotting_backend: python
+  plotting_source: scripts/make_region_figures.py
+  execution_evidence:
+    - 2026-10-31 conda run -n perovskite python -m scripts.make_region_figures
+  rendered_outputs:
+    - outputs/region/figure_roc.png
+    - outputs/region/figure_auc_bars.png
+    - outputs/region/figure_stripe_fpr.png
+    - outputs/region/figure_heatmap_example.png
+  qa_status: rendered_and_visually_inspected_pending_journal_size
+  user_final_approval: delegated_choice_A_requires_manual_final_review
+  manuscript_insertion_status: allowed_for_working_draft
+  pending_user_choices:
+    - approve or revise four result figures
+    - approve exact placement and panels of overview plus module explanatory figures
+stage_status:
+  passed: [M1, M2, M3, M4, M5, M6]
+  partially_passed: [M7]
+field_status:
+  verified:
+    main_auroc: 0.9564393939393939
+    main_faulty_recall: 0.9090909090909091
+    main_normal_fpr: 0.125
+    stripe_fpr_count: 2/8
+    test_state_images: 115
+    test_unique_regions: 105
+    test_normal_unique_regions: 6
+    train_normal_unique_regions_each_bank: 10
+    clean_only_effective_coreset: 1960
+    clean_stripes_effective_coreset: 2000
+    bbox_hit_count: 134/165
+    region_split_overlap: 0
+    multi_type_normal_regions: 19
+    dataset_article_doi: 10.1007/s00138-026-01948-0
+    dataset_version_doi: 10.5281/zenodo.18301911
+    region_level_auroc: 0.8939393939393939
+    region_level_auroc_ci95: [0.7643, 0.9832]
+    region_level_normal_any_fpr: 0.3333
+    region_level_normal_any_fpr_ci95: [0.0, 0.8]
+    matched_control_direction: higher_auroc_and_lower_stripe_fpr_in_10_seeds
+    cas_rank: "材料科学大类 2 区；MATERIALS SCIENCE, CHARACTERIZATION & TESTING 小类 1 区（2025 版，南开大学图书馆截图）"
+  pending_verification:
+    project_repository: not created
+    pretrained_weight_terms: not fully verified
+    sadd_v1_1_rights_field: recheck manually before redistribution
+  inferred:
+    q2_readiness: high risk with current single-dataset and limited-comparison evidence
+completed_outputs:
+  manuscript: manuscript_draft_cn.md
+  english_manuscript: manuscript_draft_en.md
+  submission_checklist: SUBMISSION_CHECKLIST_CN.md
+  data_availability: DATA_AVAILABILITY_DRAFT_CN.md
+  reproducibility: REPRODUCIBILITY.md
+  figure_traceability: FIGURE_TRACEABILITY_CN.md
+  terminology: TERMINOLOGY_TRANSLATION_CN.md
+  references: REFERENCES_VERIFIED_CN.md
+  review: M7_REVIEW_CN.md
+  journal_verification: JOURNAL_SCOPE_FORMAT_CN.md
+  supplementary_index: SUPPLEMENTARY_MATERIALS_INDEX_CN.md
+current_blockers:
+  - small normal-region evidence and missing external baselines
+  - APC confirmation in Editorial Manager
+  - repository and code license finalization
+next_action:
+  type: repair
+  stage: M7
+  prompt_generated: true
+last_updated: '2026-10-31'
